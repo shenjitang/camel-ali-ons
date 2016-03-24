@@ -38,14 +38,13 @@ component name :  `ons`
 </tbody></table>
 
 
-发送时指定head参数  
-------
+### 发送时指定head参数  
 ONS.tag，ONS.key  
 
-接收到消息后head中的信息
-------
+### 接收到消息后head中的信息
 ONS.tag，ONS.key，ONS.topic，ONS.msgId，ONS.startDeliverTime  
-样例：
+
+### 样例：  
 ```
       <route>
           <from uri="timer://mocksz?period=1000&amp;repeatCount=10"></from>
