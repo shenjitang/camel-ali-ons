@@ -9,11 +9,11 @@ uri:
 ons://topicname?ons://hz_test001?accessKey=xxxxxxx&amp;secretKey=xxxxxxxx&amp;producerId=PID_xxxxxxx
 ons://topicname?accessKey=xxxxxxx&amp;secretKey=xxxxxxx&amp;consumerId=CID_xxxxxxx
 ```
-发送时指定参数：
+发送时指定head参数：
 ------
 ONS.tag，ONS.key
 ------
-接收的头信息
+接收到消息后head中的信息
 ONS.tag，ONS.key，ONS.topic，ONS.msgId，ONS.startDeliverTime
 样例：
 ```
