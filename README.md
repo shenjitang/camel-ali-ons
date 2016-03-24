@@ -3,6 +3,7 @@ camel-ali-ons
 camel-ali-ons 是 apache camel的阿里云消息服务ons的component实现。
 
 component name :  ons
+------
 uri: 
 ```
 ons://topicname?ons://hz_test001?accessKey=xxxxxxx&amp;secretKey=xxxxxxxx&amp;producerId=PID_xxxxxxx
