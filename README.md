@@ -16,7 +16,7 @@ component name :  `ons`
 <tbody>
 <tr><td> <tt>accessKey</tt> </td><td></td><td> For aliyun ons authentication</td></tr>
 <tr>
-    <td>secretKey</td>
+    <td> <tt>secretKey</tt> </td>
     <td></td>
     <td>for  aliyun ons authentication secret </td>
 </tr>
@@ -34,6 +34,7 @@ component name :  `ons`
 <thead><tr><th>Property</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
 <tr><td> <tt>consumerId</tt> </td><td></td><td> For aliyun ons topic ConsumerId</td></tr>
+<tr><td> <tt>tag</tt> </td><td>*</td><td> the tag of message for consumer</td></tr>
 </tbody></table>
 
 
