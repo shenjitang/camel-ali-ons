@@ -1,20 +1,18 @@
 camel-ali-ons
 ==========
 camel-ali-ons 是 apache camel的阿里云消息服务ons的component实现。
-
-component name :  ons
 ------
-uri: 
-```
-ons://topicname?ons://hz_test001?accessKey=xxxxxxx&amp;secretKey=xxxxxxxx&amp;producerId=PID_xxxxxxx
-ons://topicname?accessKey=xxxxxxx&amp;secretKey=xxxxxxx&amp;consumerId=CID_xxxxxxx
-```
+component name :  `ons`  
+用于producer的uri: `ons://topicname?ons://hz_test001?accessKey=xxxxxxx&amp;secretKey=xxxxxxxx&amp;producerId=PID_xxxxxxx`  
+用于consumer的uri: `ons://topicname?accessKey=xxxxxxx&amp;secretKey=xxxxxxx&amp;consumerId=CID_xxxxxxx`  
+区别在于发送时指定url参数：`producerId`  接收时时指定url参数：`consumerId`  
 发送时指定head参数：
 ------
-ONS.tag，ONS.key
-------
+ONS.tag，ONS.key  
+
 接收到消息后head中的信息
-ONS.tag，ONS.key，ONS.topic，ONS.msgId，ONS.startDeliverTime
+------
+ONS.tag，ONS.key，ONS.topic，ONS.msgId，ONS.startDeliverTime  
 样例：
 ```
       <route>
