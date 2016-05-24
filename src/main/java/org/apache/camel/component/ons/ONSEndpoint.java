@@ -24,6 +24,7 @@ import com.aliyun.openservices.ons.api.MessageListener;
 import com.aliyun.openservices.ons.api.ONSFactory;
 import com.aliyun.openservices.ons.api.Producer;
 import com.aliyun.openservices.ons.api.PropertyKeyConst;
+import com.aliyun.openservices.ons.api.PropertyValueConst;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -65,6 +66,8 @@ public class ONSEndpoint extends DefaultEndpoint {
     private String tag;
     @UriParam
     private String accessKey;
+    @UriParam
+    private String messageModel;
     
     public ONSEndpoint(final String uri, ONSComponent component) {
         super(uri, component);
@@ -97,6 +100,13 @@ public class ONSEndpoint extends DefaultEndpoint {
             onsProducer = ONSFactory.createProducer(properties);
         }
         if (consumerId != null && consumerId.trim().length() > 0) {
+            if (messageModel != null && messageModel.trim().length() > 0) {
+                if ("BROADCASTING".equalsIgnoreCase(messageModel)) {
+                    properties.put(PropertyKeyConst.MessageModel, PropertyValueConst.BROADCASTING);
+                } else if ("CLUSTERING".equalsIgnoreCase(messageModel)) {
+                    properties.put(PropertyKeyConst.MessageModel, PropertyValueConst.CLUSTERING);
+                }
+            }
             properties.put(PropertyKeyConst.ConsumerId, consumerId);
             onsConsumer = ONSFactory.createConsumer(properties);
             if (tag == null || tag.trim().length() > 0) {
@@ -241,6 +251,18 @@ public class ONSEndpoint extends DefaultEndpoint {
      */
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    /**
+     * 设置ali ons topic消息的集群方式和广播方式 广播模式：BROADCASTING（大小写不敏感）
+     * @param tag 
+     */
+    public String getMessageModel() {
+        return messageModel;
+    }
+
+    public void setMessageModel(String messageModel) {
+        this.messageModel = messageModel;
     }
 
 

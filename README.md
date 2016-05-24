@@ -35,6 +35,7 @@ component name :  `ons`
 <tbody>
 <tr><td> <tt>consumerId</tt> </td><td></td><td> For aliyun ons topic ConsumerId</td></tr>
 <tr><td> <tt>tag</tt> </td><td>*</td><td> the tag of message for consumer</td></tr>
+<tr><td> <tt>messageModel</tt> </td><td></td><td>广播模式：BROADCASTING，缺省订阅模式：CLUSTERING</td></tr>
 </tbody></table>
 
 
